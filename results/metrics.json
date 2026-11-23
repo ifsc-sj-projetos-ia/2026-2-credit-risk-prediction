@@ -1,0 +1,415 @@
+{
+  "dataset": {
+    "url": "https://www.kaggle.com/api/v1/datasets/download/laotse/credit-risk-dataset?datasetVersionNumber=1",
+    "version": 1,
+    "csv_sha256": "ce3c6d2167717bf1627d1c0c81cbccd28323cd4aa7b96d542599366d5ff6aac8",
+    "simulated": true
+  },
+  "seed": 42,
+  "versions": {
+    "python": "3.12.13",
+    "numpy": "2.2.6",
+    "pandas": "2.2.3",
+    "scikit-learn": "1.6.1",
+    "matplotlib": "3.10.3",
+    "seaborn": "0.13.2",
+    "scipy": "1.15.3",
+    "threadpoolctl": "3.8.0"
+  },
+  "cleaning": {
+    "rows_raw": 32581,
+    "duplicates_removed": 165,
+    "invalid_rows_removed": 7,
+    "rows_clean": 32409
+  },
+  "features": [
+    "person_age",
+    "person_income",
+    "person_emp_length",
+    "loan_amnt",
+    "loan_percent_income",
+    "cb_person_cred_hist_length",
+    "person_home_ownership",
+    "loan_intent",
+    "cb_person_default_on_file"
+  ],
+  "excluded_features": [
+    "loan_grade",
+    "loan_int_rate"
+  ],
+  "splits": {
+    "train": {
+      "rows": 19445,
+      "defaults": 4252,
+      "default_rate": 0.21866803805605553
+    },
+    "validation": {
+      "rows": 6482,
+      "defaults": 1418,
+      "default_rate": 0.218759642085776
+    },
+    "test": {
+      "rows": 6482,
+      "defaults": 1418,
+      "default_rate": 0.218759642085776
+    }
+  },
+  "parameters": {
+    "Dummy (prior)": {
+      "constant": null,
+      "random_state": null,
+      "strategy": "prior"
+    },
+    "Logistic Regression": {
+      "C": 1.0,
+      "class_weight": null,
+      "dual": false,
+      "fit_intercept": true,
+      "intercept_scaling": 1,
+      "l1_ratio": null,
+      "max_iter": 1000,
+      "multi_class": "deprecated",
+      "n_jobs": null,
+      "penalty": "l2",
+      "random_state": 42,
+      "solver": "lbfgs",
+      "tol": 0.0001,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "Decision Tree": {
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": 5,
+      "max_features": null,
+      "max_leaf_nodes": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 30,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "random_state": 42,
+      "splitter": "best"
+    },
+    "Random Forest": {
+      "bootstrap": true,
+      "ccp_alpha": 0.0,
+      "class_weight": null,
+      "criterion": "gini",
+      "max_depth": null,
+      "max_features": "sqrt",
+      "max_leaf_nodes": null,
+      "max_samples": null,
+      "min_impurity_decrease": 0.0,
+      "min_samples_leaf": 2,
+      "min_samples_split": 2,
+      "min_weight_fraction_leaf": 0.0,
+      "monotonic_cst": null,
+      "n_estimators": 200,
+      "n_jobs": 2,
+      "oob_score": false,
+      "random_state": 42,
+      "verbose": 0,
+      "warm_start": false
+    },
+    "HistGradientBoosting": {
+      "categorical_features": "from_dtype",
+      "class_weight": null,
+      "early_stopping": false,
+      "interaction_cst": null,
+      "l2_regularization": 1.0,
+      "learning_rate": 0.08,
+      "loss": "log_loss",
+      "max_bins": 255,
+      "max_depth": null,
+      "max_features": 1.0,
+      "max_iter": 200,
+      "max_leaf_nodes": 15,
+      "min_samples_leaf": 20,
+      "monotonic_cst": null,
+      "n_iter_no_change": 10,
+      "random_state": 42,
+      "scoring": "loss",
+      "tol": 1e-07,
+      "validation_fraction": 0.1,
+      "verbose": 0,
+      "warm_start": false
+    }
+  },
+  "selection": {
+    "criterion": "validation_f1_class_1",
+    "model": "HistGradientBoosting",
+    "threshold": 0.2598193010806401
+  },
+  "validation": {
+    "Dummy (prior)": {
+      "threshold": 0.21866803805605553,
+      "accuracy": 0.218759642085776,
+      "precision": 0.218759642085776,
+      "recall": 1.0,
+      "f1": 0.3589873417721519,
+      "roc_auc": 0.5,
+      "average_precision": 0.218759642085776,
+      "confusion_matrix": [
+        [
+          0,
+          5064
+        ],
+        [
+          0,
+          1418
+        ]
+      ],
+      "f1_at_0_5": 0.0,
+      "train_f1": 0.3588639912225176
+    },
+    "Logistic Regression": {
+      "threshold": 0.32406751333538136,
+      "accuracy": 0.808701018204258,
+      "precision": 0.5611263736263736,
+      "recall": 0.576163610719323,
+      "f1": 0.5685455810716771,
+      "roc_auc": 0.8019364824185544,
+      "average_precision": 0.6229651511197893,
+      "confusion_matrix": [
+        [
+          4425,
+          639
+        ],
+        [
+          601,
+          817
+        ]
+      ],
+      "f1_at_0_5": 0.50093808630394,
+      "train_f1": 0.5671125461254612
+    },
+    "Decision Tree": {
+      "threshold": 0.36283185840707965,
+      "accuracy": 0.8619253316877507,
+      "precision": 0.7851690294438386,
+      "recall": 0.5077574047954866,
+      "f1": 0.6167023554603854,
+      "roc_auc": 0.813856821681072,
+      "average_precision": 0.6751566867297383,
+      "confusion_matrix": [
+        [
+          4867,
+          197
+        ],
+        [
+          698,
+          720
+        ]
+      ],
+      "f1_at_0_5": 0.5783251231527093,
+      "train_f1": 0.6354412786657401
+    },
+    "Random Forest": {
+      "threshold": 0.3613552877999527,
+      "accuracy": 0.8761184819500154,
+      "precision": 0.8,
+      "recall": 0.5782792665726375,
+      "f1": 0.6713057715923045,
+      "roc_auc": 0.8644944150696194,
+      "average_precision": 0.7677895107865893,
+      "confusion_matrix": [
+        [
+          4859,
+          205
+        ],
+        [
+          598,
+          820
+        ]
+      ],
+      "f1_at_0_5": 0.6398537477148081,
+      "train_f1": 0.9681634592539796
+    },
+    "HistGradientBoosting": {
+      "threshold": 0.2598193010806401,
+      "accuracy": 0.8671706263498921,
+      "precision": 0.6973777462792345,
+      "recall": 0.693935119887165,
+      "f1": 0.6956521739130435,
+      "roc_auc": 0.8964932224368701,
+      "average_precision": 0.8054091662499996,
+      "confusion_matrix": [
+        [
+          4637,
+          427
+        ],
+        [
+          434,
+          984
+        ]
+      ],
+      "f1_at_0_5": 0.6663640490240581,
+      "train_f1": 0.7461368653421634
+    }
+  },
+  "test": {
+    "HistGradientBoosting": {
+      "threshold": 0.2598193010806401,
+      "accuracy": 0.8674791730947239,
+      "precision": 0.6936936936936937,
+      "recall": 0.7059238363892807,
+      "f1": 0.6997553303040894,
+      "roc_auc": 0.9015633042333171,
+      "average_precision": 0.8160398895855118,
+      "confusion_matrix": [
+        [
+          4622,
+          442
+        ],
+        [
+          417,
+          1001
+        ]
+      ]
+    },
+    "Random Forest": {
+      "threshold": 0.3613552877999527,
+      "accuracy": 0.8776612156741747,
+      "precision": 0.7859103385178408,
+      "recall": 0.6057827926657263,
+      "f1": 0.684189565909996,
+      "roc_auc": 0.875806252604184,
+      "average_precision": 0.7858531849751046,
+      "confusion_matrix": [
+        [
+          4830,
+          234
+        ],
+        [
+          559,
+          859
+        ]
+      ]
+    },
+    "Decision Tree": {
+      "threshold": 0.36283185840707965,
+      "accuracy": 0.8668620796050601,
+      "precision": 0.7899686520376176,
+      "recall": 0.5331452750352609,
+      "f1": 0.6366315789473684,
+      "roc_auc": 0.8208121517077877,
+      "average_precision": 0.6937875425534685,
+      "confusion_matrix": [
+        [
+          4863,
+          201
+        ],
+        [
+          662,
+          756
+        ]
+      ]
+    },
+    "Logistic Regression": {
+      "threshold": 0.32406751333538136,
+      "accuracy": 0.8022215365627893,
+      "precision": 0.5457604306864065,
+      "recall": 0.5719322990126939,
+      "f1": 0.5585399449035813,
+      "roc_auc": 0.8040511634436059,
+      "average_precision": 0.6223679224179806,
+      "confusion_matrix": [
+        [
+          4389,
+          675
+        ],
+        [
+          607,
+          811
+        ]
+      ]
+    },
+    "Dummy (prior)": {
+      "threshold": 0.21866803805605553,
+      "accuracy": 0.218759642085776,
+      "precision": 0.218759642085776,
+      "recall": 1.0,
+      "f1": 0.3589873417721519,
+      "roc_auc": 0.5,
+      "average_precision": 0.218759642085776,
+      "confusion_matrix": [
+        [
+          0,
+          5064
+        ],
+        [
+          0,
+          1418
+        ]
+      ]
+    }
+  },
+  "selected_test_at_0_5": {
+    "threshold": 0.5,
+    "accuracy": 0.8893859919777847,
+    "precision": 0.9332509270704573,
+    "recall": 0.5324400564174894,
+    "f1": 0.6780422092501123,
+    "roc_auc": 0.9015633042333171,
+    "average_precision": 0.8160398895855118,
+    "confusion_matrix": [
+      [
+        5010,
+        54
+      ],
+      [
+        663,
+        755
+      ]
+    ]
+  },
+  "permutation_importance_validation": [
+    {
+      "feature": "cb_person_cred_hist_length",
+      "mean": -4.472429534441158e-05,
+      "std": 0.001254944258497523
+    },
+    {
+      "feature": "person_emp_length",
+      "mean": 0.011085036794701112,
+      "std": 0.001834265055965925
+    },
+    {
+      "feature": "loan_amnt",
+      "mean": 0.02323249244216452,
+      "std": 0.0037435160682870025
+    },
+    {
+      "feature": "person_age",
+      "mean": 0.026269161999295226,
+      "std": 0.004733372888452317
+    },
+    {
+      "feature": "cb_person_default_on_file",
+      "mean": 0.03281226862021488,
+      "std": 0.01193191298416237
+    },
+    {
+      "feature": "loan_intent",
+      "mean": 0.09737498807843599,
+      "std": 0.01581365997490463
+    },
+    {
+      "feature": "person_income",
+      "mean": 0.16580563710854723,
+      "std": 0.016721762224289637
+    },
+    {
+      "feature": "person_home_ownership",
+      "mean": 0.1894182006074695,
+      "std": 0.02836848559964905
+    },
+    {
+      "feature": "loan_percent_income",
+      "mean": 0.2798994730578672,
+      "std": 0.019648092807255078
+    }
+  ]
+}
