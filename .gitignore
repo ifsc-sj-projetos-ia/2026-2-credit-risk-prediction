@@ -4,3 +4,7 @@ __pycache__/
 .env
 data/
 *.csv
+.venv/
+.env.*
+!.env.example
+results/executed.ipynb

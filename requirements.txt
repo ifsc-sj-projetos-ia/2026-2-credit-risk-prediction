@@ -1,0 +1,12 @@
+# Ambiente de referência: Python 3.12; Colab pode usar outra versão de Python.
+numpy==2.2.6
+pandas==2.2.3
+scikit-learn==1.6.1
+matplotlib==3.10.3
+seaborn==0.13.2
+# Compatibilidade com as APIs usadas por scikit-learn 1.6 e matplotlib 3.10.
+scipy==1.15.3
+pyparsing==3.2.3
+nbformat==5.10.4
+nbclient==0.10.2
+ipykernel==6.29.5
